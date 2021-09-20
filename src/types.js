@@ -133,7 +133,7 @@ const types = {
       ];
     },
     stringify([, v]) {
-      return `-${types.Value.stringify(v)}`;
+      return `~${types.Value.stringify(v)}`;
     },
     simplify([, v], opts) {
       return types.Value.simplify(v, opts);

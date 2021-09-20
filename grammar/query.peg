@@ -12,7 +12,7 @@ grammar Query
                  / including
 
     # To exclude, you use a "-" before the query. OR cannot be negated unless it's in a group.
-    excluding   <- "-" value:base                               <Excluding>
+    excluding   <- "~" value:base                               <Excluding>
     including   <- "" value:(or / base)                         <Including>
 
     # Operators can be grouped with an OR keyword in groups of two or more.

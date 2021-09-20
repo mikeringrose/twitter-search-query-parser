@@ -18,15 +18,15 @@ const testCases = [
   [
     'pairs',
     `filter:vine exclude:retweets min_replies:100 lang:es to:jack since:2016-01-01
-    -filter:vine -exclude:retweets -min_replies:100 -lang:es -to:jack -since:2016-01-01`
+    ~filter:vine ~exclude:retweets ~min_replies:100 ~lang:es ~to:jack ~since:2016-01-01`
   ],
   [
     'list',
-    'list:beep/boop -list:beep/boop list:@beep/boop -list:@beep/boop'
+    'list:beep/boop ~list:beep/boop list:@beep/boop ~list:@beep/boop'
   ],
   [
     'group',
-    `a (b c) -(d e)`
+    `a (b c) ~(d e)`
   ],
   [
     'OR groups',
@@ -34,7 +34,7 @@ const testCases = [
   ],
   [
     'invalid OR',
-    'a OR -b'
+    'a OR ~b'
   ],
   [
     'supergroup',
@@ -42,11 +42,11 @@ const testCases = [
   ],
   [
     'extreme example',
-    `search #search @search -query filter:vine exclude:retweets exclude:nativeretweets
+    `search #search @search ~query filter:vine exclude:retweets exclude:nativeretweets
      min_replies:10 OR min_retweets:100 min_faves:20 lang:es OR to:jack ?
      since:2016-01-01 until:2016-02-01 list:NASA/astronauts-in-space-now filter:verified
-     cats OR dogs OR beavers "exactly this" -"exactly not this"
-     fish #fish @fish "fish" -fish -#fish -@fish -"fish"`
+     cats OR dogs OR beavers "exactly this" ~"exactly not this"
+     fish #fish @fish "fish" ~fish ~#fish ~@fish ~"fish"`
   ]
 ];
 
